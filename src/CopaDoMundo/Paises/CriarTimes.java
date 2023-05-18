@@ -3,9 +3,6 @@ package CopaDoMundo.Paises;
 import java.util.ArrayList;
 import java.util.Collections;
 
-
-import Api.APIRandomName;
-
 public class CriarTimes 
 {
     public ArrayList<Jogadores> timesUnidos()
@@ -23,22 +20,25 @@ public class CriarTimes
     private ArrayList<Jogadores> criarTimes()
     {
         ArrayList<Jogadores> timesArrayList = new ArrayList<>();
+
+
         ArrayList<String> pais = criarTimeArrayList();
+        ArrayList<String> jogadadores = criarJogadorArrayList();
         for(int i = 0; i < 32; i++)
         {
             for(int j = 0; j < 11; j++)
             {
-                String nomeDoJogador = criarJogador();
-
-                Jogadores jogadores = new Jogadores(nomeDoJogador, pais.get(i));
+                Jogadores jogadores = new Jogadores(jogadadores.get(j), pais.get(i));
                 timesArrayList.add(jogadores);
             }
         }
 
+        for (Jogadores jogadores : timesArrayList) {
+            System.out.println(jogadores);
+        }
+
         return timesArrayList;
     }
-
-    private APIRandomName api = new APIRandomName();
 
     private ArrayList<String> criarTimeArrayList()
     {
@@ -52,8 +52,15 @@ public class CriarTimes
         return listaDepPaiseArrayList; 
     }
 
-    private String criarJogador()
+    private ArrayList<String> criarJogadorArrayList()
     {
-        return api.criarNome(); 
+        ListaDeJogadores listaDeJogadores = new ListaDeJogadores();
+        ArrayList<String> listaDeJogadoresArrayList = new ArrayList<>();
+
+        listaDeJogadoresArrayList = listaDeJogadores.listaDeJogadoresArrayList();
+
+        Collections.shuffle(listaDeJogadoresArrayList);
+
+        return listaDeJogadoresArrayList; 
     }
 }
