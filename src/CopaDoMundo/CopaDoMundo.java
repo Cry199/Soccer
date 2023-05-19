@@ -57,21 +57,21 @@ public class CopaDoMundo {
     private List<List<String>> faseDeGruposJogo(List<List<String>> faseDeGruposLista)
     {
         // Jogar entre os países de cada grupo e obter os vencedores
-        List<List<String>> faseDeOitavas = new ArrayList<>();
+        List<List<String>> faseDeGrupos = new ArrayList<>();
         for (List<String> grupoAtual : faseDeGruposLista) 
         {
             List<String> vencedoresGrupoAtual = realizarAsPartidasEntreOsPaiesDoGrupo(grupoAtual);
-            faseDeOitavas.add(vencedoresGrupoAtual);
+            faseDeGrupos.add(vencedoresGrupoAtual);
         }
 
         // Exibir os jogos da fase grupo
         System.out.println("Fase Grupo Jogos: ");
-        for (int i = 0; i < faseDeOitavas.size(); i++) 
+        for (int i = 0; i < faseDeGrupos.size(); i++) 
         {
-            System.out.println("Grupo " + (i + 1) + ": " + faseDeOitavas.get(i));
+            System.out.println("Grupo " + (i + 1) + ": " + faseDeGrupos.get(i));
         }
 
-        return faseDeOitavas;
+        return faseDeGrupos;
     }
 
     private List<List<String>> quartasDeFinal(List<List<String>> faseDeGrupos)
@@ -84,11 +84,11 @@ public class CopaDoMundo {
             quartasDeFinal.add(vencedoresGrupoAtual);
         }
 
-        // Exibir os jogos da fase grupo
-        System.out.println("Fase Grupo Jogos: ");
+        // Exibir os jogos da Quartas De Final
+        System.out.println("Quartas De Final: ");
         for (int i = 0; i < quartasDeFinal.size(); i++) 
         {
-            System.out.println("Grupo " + (i + 1) + ": " + quartasDeFinal.get(i));
+            System.out.println("Time " + (i + 1) + ": "+ quartasDeFinal.get(i));
         }
 
         return quartasDeFinal;
