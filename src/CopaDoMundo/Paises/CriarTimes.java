@@ -5,22 +5,16 @@ import java.util.Collections;
 
 public class CriarTimes 
 {
-    public ArrayList<Jogadores> timesUnidos()
+    public ArrayList<Jogadores> timesInit()
     {
-        ArrayList<Jogadores> timesUnidos = new ArrayList<>();
-
-        for (int index = 0; index < 32; index++) 
-        {
-            timesUnidos.addAll(criarTimes());
-        }
-
-        return timesUnidos;
+        ArrayList<Jogadores> timesInit = criarTimes();
+       
+        return timesInit;
     }
 
     private ArrayList<Jogadores> criarTimes()
     {
         ArrayList<Jogadores> timesArrayList = new ArrayList<>();
-
 
         ArrayList<String> pais = criarTimeArrayList();
         ArrayList<String> jogadadores = criarJogadorArrayList();
@@ -33,10 +27,13 @@ public class CriarTimes
             }
         }
 
-        for (Jogadores jogadores : timesArrayList) {
+        /* 
+        // Exibir os Jogadores 
+        for (Jogadores jogadores : timesArrayList) 
+        {
             System.out.println(jogadores);
         }
-
+        */
         return timesArrayList;
     }
 
