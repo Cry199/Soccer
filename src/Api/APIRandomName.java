@@ -43,7 +43,6 @@ public class APIRandomName
 
                 // Exibir o nome obtido ou retorna o nome.
                 return name;
-                   
             }
             else
             {

@@ -8,7 +8,8 @@ public class CriarTimes {
         return criarTimes();
     }
 
-    private ArrayList<Jogadores> criarTimes() {
+    private ArrayList<Jogadores> criarTimes() 
+    {
         ArrayList<Jogadores> timesArrayList = new ArrayList<>();
 
         ArrayList<String> pais = criarTimeArrayList();
@@ -31,7 +32,8 @@ public class CriarTimes {
         return timesArrayList;
     }
 
-    private ArrayList<String> criarTimeArrayList() {
+    private ArrayList<String> criarTimeArrayList() 
+    {
         ListaDePaises listaDePaises = new ListaDePaises();
         ArrayList<String> listaDepPaiseArrayList = new ArrayList<>();
 
@@ -42,7 +44,8 @@ public class CriarTimes {
         return listaDepPaiseArrayList;
     }
 
-    private ArrayList<String> criarJogadorArrayList() {
+    private ArrayList<String> criarJogadorArrayList() 
+    {
         ListaDeJogadores listaDeJogadores = new ListaDeJogadores();
         ArrayList<String> listaDeJogadoresArrayList = new ArrayList<>();
 
