@@ -1,5 +1,7 @@
 package App;
 
+import java.util.Scanner;
+
 import CopaDoMundo.CopaDoMundo;
 
 public class UI
@@ -29,18 +31,19 @@ public class UI
 		System.out.flush();
 	}
 
+    private static final Scanner sc = new Scanner(System.in);
+    private static final CopaDoMundo copaDoMundo = new CopaDoMundo();
+
     public static void init()
     {
-        /* 
-        CopaDoMundo copaDoMundo = new CopaDoMundo();
-        copaDoMundo.CopaDoMundoInit();
-        */
-
         printLogoDoMenu();
         printMenu();
+        int opcaoUser = sc.nextInt();
+        initDoMenu(opcaoUser);
+
     }
 
-    public static void printLogoDoMenu()
+    private static void printLogoDoMenu()
     {
         System.out.println(ANSI_BLUE + " _______  __   _______    ___      " + ANSI_RESET);
         System.out.println(ANSI_BLUE + "|   ____||  | |   ____|  /   \\     " + ANSI_RESET);
@@ -50,14 +53,51 @@ public class UI
         System.out.println(ANSI_BLUE + "|__|     |__| |__|   /__/     \\__\\ " + ANSI_RESET);
     }
 
-    public static void printMenu() 
+    private static void printMenu() 
     {
-        System.out.println("Opções:");
-        System.out.println("1. Opção 1");
-        System.out.println("2. Opção 2");
-        System.out.println("3. Opção 3");
-        System.out.println("4. Opção 4");
-        System.out.println("5. Opção 5");
-        System.out.println("0. Sair");
+        System.out.println(ANSI_GREEN + "Opções:"+ ANSI_RESET);
+        System.out.println(ANSI_PURPLE + "1. Inicio" + ANSI_RESET);
+        System.out.println(ANSI_CYAN + "2. Ver Todos Paises"+ ANSI_RESET);
+        System.out.println(ANSI_BLUE + "3. Ver Todos Jogadores"+ ANSI_RESET);
+        System.out.println(ANSI_RED + "0. Sair"+ ANSI_RESET);
+    }
+
+    private static void initDoMenu(int opcaoUser)
+    {
+        do
+        {
+            switch(opcaoUser)
+            {
+                case 1:
+
+                    copaDoMundo.CopaDoMundoInit();
+
+                break;
+
+                case 2:
+
+                    copaDoMundo.CopaDoMundoInit();
+
+                break;
+
+                case 3:
+
+                    copaDoMundo.CopaDoMundoInit();
+
+                break;
+
+                case 0:
+
+                    System.out.println(ANSI_RED + "Saindo..." + ANSI_RESET);
+
+                break;
+            }
+        }
+        while(opcaoUser != 0);
+    }
+
+    private static void initDaCopaDoMundo()
+    {
+        
     }
 }

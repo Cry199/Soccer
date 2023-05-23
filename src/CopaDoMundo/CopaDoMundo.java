@@ -54,7 +54,7 @@ public class CopaDoMundo
         }
 
         // Exibir os grupos
-        System.out.println("Fase De Grupo 1");
+        System.out.println("Fase De Grupo: ");
         for (int i = 0; i < faseDeGruposLista.size(); i++) {
             System.out.println("Grupo " + (i + 1) + ": " + faseDeGruposLista.get(i));
         }
